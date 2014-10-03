@@ -60,7 +60,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>fr.univtln.bruno.exemple.bibliotheque.gui.Ihm</mainClass>
+                                    <mainClass>fr.univtln.bruno.d14.simpleihm.App</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>
