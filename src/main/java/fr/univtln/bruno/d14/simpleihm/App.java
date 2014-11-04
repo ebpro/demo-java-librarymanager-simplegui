@@ -10,8 +10,5 @@ public class App {
 
         bibliotheque.ajouterAuteur(new Auteur.AuteurBuilder().setPrenom("Jean").setNom("Martin").createAuteur());
         bibliotheque.ajouterAuteur(new Auteur.AuteurBuilder().setPrenom("Marie").setNom("Durand").createAuteur());
-
-
-
     }
 }

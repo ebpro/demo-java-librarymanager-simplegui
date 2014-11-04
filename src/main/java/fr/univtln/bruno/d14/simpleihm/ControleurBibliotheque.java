@@ -54,18 +54,17 @@ public class ControleurBibliotheque {
 
     public void ajouterAuteur() {
         try {
-            modeleBibliotheque.ajouterAuteur(new Auteur.AuteurBuilder()
-                    .setPrenom(prenomNouvelAuteurModel.getText(0, prenomNouvelAuteurModel.getLength()))
-                    .setNom(nomNouvelAuteurModel.getText(0, nomNouvelAuteurModel.getLength()))
-                    .createAuteur());
+            modeleBibliotheque.ajouterAuteur(
+                    prenomNouvelAuteurModel.getText(0, prenomNouvelAuteurModel.getLength()),
+                    nomNouvelAuteurModel.getText(0, nomNouvelAuteurModel.getLength()));
         } catch (BadLocationException e) {
             e.printStackTrace();
         }
         clearAuteur();
     }
 
-    public void ajouterAuteur(Auteur auteur) {
-        modeleBibliotheque.ajouterAuteur(auteur);
+    public void supprimerAuteur(final int ID) {
+        modeleBibliotheque.supprimerAuteur(ID);
     }
 
     public void supprimerAuteur(Auteur auteur) {
@@ -74,8 +73,8 @@ public class ControleurBibliotheque {
 
     public void clearAuteur() {
         try {
-            nomNouvelAuteurModel.remove(0,nomNouvelAuteurModel.getLength());
-            prenomNouvelAuteurModel.remove(0,prenomNouvelAuteurModel.getLength());
+            nomNouvelAuteurModel.remove(0, nomNouvelAuteurModel.getLength());
+            prenomNouvelAuteurModel.remove(0, prenomNouvelAuteurModel.getLength());
         } catch (BadLocationException e) {
             e.printStackTrace();
         }

@@ -1,14 +1,27 @@
 package fr.univtln.bruno.d14.simpleihm;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
 /**
  * Created by bruno on 03/10/14.
  */
-public class Auteur {
+//Cette annotation sert à la serialisation en XML et en JSON
+@XmlRootElement
+public class Auteur implements Serializable {
     public static int nbAuteur = 0;
-    public final int ID;
+    public int ID;
+    @XmlElement
     private String nom;
+    @XmlElement
     private String prenom;
+    @XmlElement
     private String biographie;
+
+    //Le constructeur sans paramètre est obligatoire pour la sérialisation en JSON/XML
+    public Auteur() {
+    }
 
     public static class AuteurBuilder {
         private String nom;
@@ -31,7 +44,7 @@ public class Auteur {
         }
 
         public Auteur createAuteur() {
-            return new Auteur(nom, prenom, biographie);
+            return new Auteur(nbAuteur++, nom, prenom, biographie);
         }
     }
 
@@ -39,8 +52,8 @@ public class Auteur {
         return biographie;
     }
 
-    private Auteur(String nom, String prenom, String biographie) {
-        this.ID = nbAuteur++;
+    private Auteur(int id, String nom, String prenom, String biographie) {
+        this.ID = id;
         this.nom = nom;
         this.prenom = prenom;
         this.biographie = biographie;

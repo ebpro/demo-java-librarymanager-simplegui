@@ -1,6 +1,8 @@
 package fr.univtln.bruno.d14.simpleihm;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Observable;
 
 /**
  * Created by bruno on 03/10/14.
@@ -11,9 +13,13 @@ public class ModeleBibliotheque extends Observable {
     public enum ModeleBibliothequeEvent {AUTEUR, DOCUMENT, MATERIEL}
 
     public Auteur getAuteur(final int ID) {
-        for (Auteur auteur:auteurs)
+        for (Auteur auteur : auteurs)
             if (auteur.ID == ID) return auteur;
         return null;
+    }
+
+    public void ajouterAuteur(String prenom, String nom) {
+        ajouterAuteur(new Auteur.AuteurBuilder().setPrenom(prenom).setNom(nom).createAuteur());
     }
 
     public void ajouterAuteur(Auteur auteur) {
@@ -21,6 +27,10 @@ public class ModeleBibliotheque extends Observable {
         //On previent les observateurs du changement
         setChanged();
         notifyObservers(ModeleBibliothequeEvent.AUTEUR);
+    }
+
+    public void supprimerAuteur(final int ID) {
+        supprimerAuteur(getAuteur(ID));
     }
 
     public void supprimerAuteur(Auteur auteur) {
