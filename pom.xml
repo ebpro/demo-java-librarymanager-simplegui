@@ -11,7 +11,7 @@
     <parent>
         <groupId>fr.univtln.bruno.coursjava.librarymanager</groupId>
         <artifactId>librarymanager-parent</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0-dev-8</version>
     </parent>
 
     <groupId>fr.univtln.bruno.coursjava.librarymanager</groupId>
@@ -22,7 +22,7 @@
         <dependency>
             <groupId>fr.univtln.bruno.coursjava.librarymanager</groupId>
             <artifactId>librarymanager-observablelibrary</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0.0-dev-5</version>
         </dependency>
     </dependencies>
 </project>
