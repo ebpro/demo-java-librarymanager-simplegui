@@ -1,4 +1,4 @@
-package fr.univtln.bruno.d14;
+package fr.univtln.bruno.coursjava.librarymanager.simplegui;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
